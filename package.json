@@ -1,0 +1,22 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.1.0",
+    "hjs": "*",
+    "less-middleware": "*",
+    "connect-assets": "~2.4.2",
+    "connect-assets-jspaths": "0.0.9"
+  },
+  "devDependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.9.0",
+    "grunt-qunit-serverless": "~0.2.6",
+    "grunt": "~0.4.1",
+    "grunt-jshint2": "~0.1.1"
+  }
+}
