@@ -3,11 +3,13 @@
  * Module dependencies.
  */
 
-var express = require('express'),
-    routes = require('./routes'),
-    user = require('./routes/user'),
-    http = require('http'),
+var http = require('http'),
     path = require('path');
+
+var express = require('express');
+  
+var router = require('./routes'),
+    assets = require("./assets");
 
 var app = express();
 
@@ -30,9 +32,15 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+// Register routes
+router.register(app);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+// Fiddle our assets
+assets.init(app, function(err) {
+  if(err) {
+    throw err;
+  }
+  http.createServer(app).listen(app.get('port'), function(){
+    console.log("Express server listening on port " + app.get('port'));
+  });
 });

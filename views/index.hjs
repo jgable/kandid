@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Kandid</title>
+    
+    {{{css.app}}}
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    <div id="root">
+      
+    </div>
+
+    {{{js.templates}}}
+
+	  {{{js.paths}}}
+
+	  {{{js.appSettings}}}
+
+	  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.0.2/require.min.js" data-main="{{js.main}}"></script>    
   </body>
 </html>
